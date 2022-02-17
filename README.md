@@ -52,6 +52,11 @@ Then, everytime you want to update the app, you have to update our branch "maste
 git checkout master 
 git fetch upstream
 git pull --rebase upstream master
+```
+
+Finally, to deploy on the IC
+```bash
+# with an authorized principal
 dfx deploy --network=ic
 ```
 The app should be live at https://ate7l-riaaa-aaaaf-qae3q-cai.raw.ic0.app/

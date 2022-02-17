@@ -32,6 +32,7 @@ export const LockupAbledPoolIds: {
 	'482': true,
 	'497': true,
 	'498': true,
+	'547': true,
 	'548': true,
 	'557': true,
 	'558': true,
@@ -39,6 +40,9 @@ export const LockupAbledPoolIds: {
 	'572': true,
 	'573': true,
 	'574': true,
+	'577': true,
+	'578': true,
+	'579': true,
 	'584': true,
 	'585': true,
 	'586': true,
@@ -47,6 +51,15 @@ export const LockupAbledPoolIds: {
 	'600': true,
 	'601': true,
 	'602': true,
+	'604': true,
+	'611': true,
+	'612': true,
+	'613': true,
+	'617': true,
+	'618': true,
+	'619': true,
+	'621': true,
+	'629': true,
 };
 
 export const PromotedLBPPoolIds: {
@@ -144,6 +157,20 @@ export const ExtraGaugeInPool: {
 			denom: 'ibc/46B44899322F3CD854D2D46DEEF881958467CDD4B3B10086DA49296BBED94BED',
 		},
 	],
+	'547': [
+		{
+			gaugeId: '2021',
+			denom: 'ibc/655BCEF3CDEBE32863FF281DBBE3B06160339E9897DC9C9C9821932A5F8BA6F8',
+		},
+		{
+			gaugeId: '2022',
+			denom: 'ibc/655BCEF3CDEBE32863FF281DBBE3B06160339E9897DC9C9C9821932A5F8BA6F8',
+		},
+		{
+			gaugeId: '2023',
+			denom: 'ibc/655BCEF3CDEBE32863FF281DBBE3B06160339E9897DC9C9C9821932A5F8BA6F8',
+		},
+	],
 	'548': [
 		{
 			gaugeId: '1676',
@@ -172,29 +199,29 @@ export const ExtraGaugeInPool: {
 	],
 	'560': [
 		{
-			gaugeId: '1790',
+			gaugeId: '1948',
 			denom: 'ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0',
 		},
 		{
-			gaugeId: '1792',
+			gaugeId: '1949',
 			denom: 'ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0',
 		},
 		{
-			gaugeId: '1793',
+			gaugeId: '1950',
 			denom: 'ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0',
 		},
 	],
 	'562': [
 		{
-			gaugeId: '1789',
+			gaugeId: '1951',
 			denom: 'ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0',
 		},
 		{
-			gaugeId: '1791',
+			gaugeId: '1952',
 			denom: 'ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0',
 		},
 		{
-			gaugeId: '1794',
+			gaugeId: '1953',
 			denom: 'ibc/0EF15DF2F02480ADE0BB6E85D9EBB5DAEA2836D3860E9F97F9AADE4F57A31AA0',
 		},
 	],
@@ -228,30 +255,58 @@ export const ExtraGaugeInPool: {
 	],
 	'573': [
 		{
-			gaugeId: '1852',
+			gaugeId: '2030',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
 		},
 		{
-			gaugeId: '1853',
+			gaugeId: '2031',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
 		},
 		{
-			gaugeId: '1854',
+			gaugeId: '2032',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
 		},
 	],
 	'574': [
 		{
-			gaugeId: '1855',
+			gaugeId: '2033',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
 		},
 		{
-			gaugeId: '1856',
+			gaugeId: '2034',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
 		},
 		{
-			gaugeId: '1857',
+			gaugeId: '2035',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
+		},
+	],
+	'577': [
+		{
+			gaugeId: '2088',
+			denom: 'ibc/B547DC9B897E7C3AA5B824696110B8E3D2C31E3ED3F02FF363DCBAD82457E07E',
+		},
+		{
+			gaugeId: '2089',
+			denom: 'ibc/B547DC9B897E7C3AA5B824696110B8E3D2C31E3ED3F02FF363DCBAD82457E07E',
+		},
+		{
+			gaugeId: '2090',
+			denom: 'ibc/B547DC9B897E7C3AA5B824696110B8E3D2C31E3ED3F02FF363DCBAD82457E07E',
+		},
+	],
+	'578': [
+		{
+			gaugeId: '2091',
+			denom: 'ibc/B547DC9B897E7C3AA5B824696110B8E3D2C31E3ED3F02FF363DCBAD82457E07E',
+		},
+		{
+			gaugeId: '2092',
+			denom: 'ibc/B547DC9B897E7C3AA5B824696110B8E3D2C31E3ED3F02FF363DCBAD82457E07E',
+		},
+		{
+			gaugeId: '2093',
+			denom: 'ibc/B547DC9B897E7C3AA5B824696110B8E3D2C31E3ED3F02FF363DCBAD82457E07E',
 		},
 	],
 	'584': [
@@ -312,15 +367,15 @@ export const ExtraGaugeInPool: {
 	],
 	'592': [
 		{
-			gaugeId: '1858',
+			gaugeId: '2036',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
 		},
 		{
-			gaugeId: '1859',
+			gaugeId: '2037',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
 		},
 		{
-			gaugeId: '1860',
+			gaugeId: '2038',
 			denom: 'ibc/4E5444C35610CC76FC94E7F7886B93121175C28262DDFDDE6F84E82BF2425452',
 		},
 	],
@@ -382,12 +437,146 @@ export const ExtraGaugeInPool: {
 	],
 	'602': [
 		{
-			gaugeId: '1909',
+			gaugeId: '2041',
 			denom: 'ibc/7A08C6F11EF0F59EB841B9F788A87EC9F2361C7D9703157EC13D940DC53031FA',
 		},
 		{
-			gaugeId: '1910',
+			gaugeId: '2042',
 			denom: 'ibc/7A08C6F11EF0F59EB841B9F788A87EC9F2361C7D9703157EC13D940DC53031FA',
+		},
+	],
+	'604': [
+		{
+			gaugeId: '1995',
+			denom: 'ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4',
+		},
+		{
+			gaugeId: '1996',
+			denom: 'ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4',
+		},
+		{
+			gaugeId: '1997',
+			denom: 'ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4',
+		},
+	],
+	'605': [
+		{
+			gaugeId: '1960',
+			denom: 'ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228',
+		},
+		{
+			gaugeId: '1961',
+			denom: 'ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228',
+		},
+		{
+			gaugeId: '1962',
+			denom: 'ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228',
+		},
+	],
+	'606': [
+		{
+			gaugeId: '1963',
+			denom: 'ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228',
+		},
+		{
+			gaugeId: '1964',
+			denom: 'ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228',
+		},
+		{
+			gaugeId: '1965',
+			denom: 'ibc/B9E0A1A524E98BB407D3CED8720EFEFD186002F90C1B1B7964811DD0CCC12228',
+		},
+	],
+	'611': [
+		{
+			gaugeId: '1998',
+			denom: 'ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4',
+		},
+		{
+			gaugeId: '1999',
+			denom: 'ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4',
+		},
+		{
+			gaugeId: '2000',
+			denom: 'ibc/987C17B11ABC2B20019178ACE62929FE9840202CE79498E29FE8E5CB02B7C0A4',
+		},
+	],
+	'612': [
+		{
+			gaugeId: '2109',
+			denom: 'ibc/A0CC0CF735BFB30E730C70019D4218A1244FF383503FF7579C9201AB93CA9293',
+		},
+	],
+	'613': [
+		{
+			gaugeId: '1982',
+			denom: 'ibc/E7B35499CFBEB0FF5778127ABA4FB2C4B79A6B8D3D831D4379C4048C238796BD',
+		},
+		{
+			gaugeId: '2013',
+			denom: 'ibc/E7B35499CFBEB0FF5778127ABA4FB2C4B79A6B8D3D831D4379C4048C238796BD',
+		},
+		{
+			gaugeId: '2014',
+			denom: 'ibc/E7B35499CFBEB0FF5778127ABA4FB2C4B79A6B8D3D831D4379C4048C238796BD',
+		},
+	],
+	'617': [
+		{
+			gaugeId: '2039',
+			denom: 'ibc/7A08C6F11EF0F59EB841B9F788A87EC9F2361C7D9703157EC13D940DC53031FA',
+		},
+		{
+			gaugeId: '2040',
+			denom: 'ibc/7A08C6F11EF0F59EB841B9F788A87EC9F2361C7D9703157EC13D940DC53031FA',
+		},
+	],
+	'618': [
+		{
+			gaugeId: '2004',
+			denom: 'ibc/EA4C0A9F72E2CEDF10D0E7A9A6A22954DB3444910DB5BE980DF59B05A46DAD1C',
+		},
+		{
+			gaugeId: '2005',
+			denom: 'ibc/EA4C0A9F72E2CEDF10D0E7A9A6A22954DB3444910DB5BE980DF59B05A46DAD1C',
+		},
+		{
+			gaugeId: '2006',
+			denom: 'ibc/EA4C0A9F72E2CEDF10D0E7A9A6A22954DB3444910DB5BE980DF59B05A46DAD1C',
+		},
+	],
+	'619': [
+		{
+			gaugeId: '2007',
+			denom: 'ibc/EA4C0A9F72E2CEDF10D0E7A9A6A22954DB3444910DB5BE980DF59B05A46DAD1C',
+		},
+		{
+			gaugeId: '2008',
+			denom: 'ibc/EA4C0A9F72E2CEDF10D0E7A9A6A22954DB3444910DB5BE980DF59B05A46DAD1C',
+		},
+		{
+			gaugeId: '2009',
+			denom: 'ibc/EA4C0A9F72E2CEDF10D0E7A9A6A22954DB3444910DB5BE980DF59B05A46DAD1C',
+		},
+	],
+	'621': [
+		{
+			gaugeId: '2020',
+			denom: 'ibc/307E5C96C8F60D1CBEE269A9A86C0834E1DB06F2B3788AE4F716EDB97A48B97D',
+		},
+	],
+	'629': [
+		{
+			gaugeId: '2067',
+			denom: 'ibc/8318FD63C42203D16DDCAF49FE10E8590669B3219A3E87676AC9DA50722687FB',
+		},
+		{
+			gaugeId: '2068',
+			denom: 'ibc/8318FD63C42203D16DDCAF49FE10E8590669B3219A3E87676AC9DA50722687FB',
+		},
+		{
+			gaugeId: '2069',
+			denom: 'ibc/8318FD63C42203D16DDCAF49FE10E8590669B3219A3E87676AC9DA50722687FB',
 		},
 	],
 };
@@ -409,6 +598,9 @@ export const IBCAssetInfos: {
 	// In some reasons, ibc channel is in unstable status.
 	// Disable the deposit, withdraw button and show the tooltip.
 	isUnstable?: boolean;
+
+	// If the asset is from ics20-cw20
+	ics20ContractAddress?: string;
 }[] = [
 	{
 		counterpartyChainId: 'cosmoshub-4',
@@ -445,6 +637,25 @@ export const IBCAssetInfos: {
 		sourceChannelId: 'channel-42',
 		destChannelId: 'channel-0',
 		coinMinimalDenom: 'ujuno',
+	},
+	{
+		counterpartyChainId: 'juno-1',
+		sourceChannelId: 'channel-169',
+		destChannelId: 'channel-47',
+		coinMinimalDenom: 'cw20:juno168ctmpyppk90d34p3jjy658zf5a5l3w8wk35wht6ccqj4mr0yv8s4j5awr',
+		ics20ContractAddress: 'juno1v4887y83d6g28puzvt8cl0f3cdhd3y6y9mpysnsp3k8krdm7l6jqgm0rkn',
+	},
+	{
+		counterpartyChainId: 'stargaze-1',
+		sourceChannelId: 'channel-75',
+		destChannelId: 'channel-0',
+		coinMinimalDenom: 'ustars',
+	},
+	{
+		counterpartyChainId: 'chihuahua-1',
+		sourceChannelId: 'channel-113',
+		destChannelId: 'channel-7',
+		coinMinimalDenom: 'uhuahua',
 	},
 	{
 		counterpartyChainId: 'core-1',
@@ -559,6 +770,60 @@ export const IBCAssetInfos: {
 		sourceChannelId: 'channel-108',
 		destChannelId: 'channel-0',
 		coinMinimalDenom: 'ncheq',
+	},
+	{
+		counterpartyChainId: 'lum-network-1',
+		sourceChannelId: 'channel-115',
+		destChannelId: 'channel-3',
+		coinMinimalDenom: 'ulum',
+	},
+	{
+		counterpartyChainId: 'vidulum-1',
+		sourceChannelId: 'channel-124',
+		destChannelId: 'channel-0',
+		coinMinimalDenom: 'uvdl',
+	},
+	{
+		counterpartyChainId: 'desmos-mainnet',
+		sourceChannelId: 'channel-135',
+		destChannelId: 'channel-2',
+		coinMinimalDenom: 'udsm',
+	},
+	{
+		counterpartyChainId: 'dig-1',
+		sourceChannelId: 'channel-128',
+		destChannelId: 'channel-1',
+		coinMinimalDenom: 'udig',
+	},
+	{
+		counterpartyChainId: 'sommelier-3',
+		sourceChannelId: 'channel-165',
+		destChannelId: 'channel-0',
+		coinMinimalDenom: 'usomm',
+	},
+	{
+		counterpartyChainId: 'sifchain-1',
+		sourceChannelId: 'channel-47',
+		destChannelId: 'channel-17',
+		coinMinimalDenom: 'rowan',
+	},
+	{
+		counterpartyChainId: 'laozi-mainnet',
+		sourceChannelId: 'channel-148',
+		destChannelId: 'channel-83',
+		coinMinimalDenom: 'uband',
+	},
+	{
+		counterpartyChainId: 'darchub',
+		sourceChannelId: 'channel-171',
+		destChannelId: 'channel-0',
+		coinMinimalDenom: 'udarc',
+	},
+	{
+		counterpartyChainId: 'umee-1',
+		sourceChannelId: 'channel-184',
+		destChannelId: 'channel-0',
+		coinMinimalDenom: 'uumee',
 	},
 ];
 
@@ -1052,8 +1317,8 @@ export const EmbedChainInfos: ChainInfoWithExplorer[] = [
 		explorerUrlToTx: 'https://emoney.bigdipper.live/transactions/{txHash}',
 	},
 	{
-		rpc: 'https://rpc-juno.itastakers.com',
-		rest: 'https://lcd-juno.itastakers.com',
+		rpc: 'https://rpc-juno.keplr.app',
+		rest: 'https://lcd-juno.keplr.app',
 		chainId: 'juno-1',
 		chainName: 'Juno',
 		stakeCurrency: {
@@ -1074,6 +1339,15 @@ export const EmbedChainInfos: ChainInfoWithExplorer[] = [
 				coinDecimals: 6,
 				coinGeckoId: 'juno-network',
 				coinImageUrl: window.location.origin + '/public/assets/tokens/juno.svg',
+			},
+			{
+				type: 'cw20',
+				contractAddress: 'juno168ctmpyppk90d34p3jjy658zf5a5l3w8wk35wht6ccqj4mr0yv8s4j5awr',
+				coinDenom: 'NETA',
+				coinMinimalDenom: 'cw20:juno168ctmpyppk90d34p3jjy658zf5a5l3w8wk35wht6ccqj4mr0yv8s4j5awr:NETA',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:neta',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/neta.svg',
 			},
 		],
 		feeCurrencies: [
@@ -1270,7 +1544,7 @@ export const EmbedChainInfos: ChainInfoWithExplorer[] = [
 				coinImageUrl: window.location.origin + '/public/assets/tokens/btsg.svg',
 			},
 		],
-		features: ['stargate', 'ibc-transfer'],
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx', 'ibc-go'],
 		explorerUrlToTx: 'https://explorebitsong.com/transactions/{txHash}',
 	},
 	{
@@ -1398,7 +1672,7 @@ export const EmbedChainInfos: ChainInfoWithExplorer[] = [
 			coinDenom: 'CMDX',
 			coinMinimalDenom: 'ucmdx',
 			coinDecimals: 6,
-			coinGeckoId: 'pool:ucmdx',
+			coinGeckoId: 'comdex',
 			coinImageUrl: window.location.origin + '/public/assets/tokens/cmdx.png',
 		},
 		bip44: {
@@ -1410,7 +1684,7 @@ export const EmbedChainInfos: ChainInfoWithExplorer[] = [
 				coinDenom: 'CMDX',
 				coinMinimalDenom: 'ucmdx',
 				coinDecimals: 6,
-				coinGeckoId: 'pool:ucmdx',
+				coinGeckoId: 'comdex',
 				coinImageUrl: window.location.origin + '/public/assets/tokens/cmdx.png',
 			},
 		],
@@ -1419,7 +1693,7 @@ export const EmbedChainInfos: ChainInfoWithExplorer[] = [
 				coinDenom: 'CMDX',
 				coinMinimalDenom: 'ucmdx',
 				coinDecimals: 6,
-				coinGeckoId: 'pool:ucmdx',
+				coinGeckoId: 'comdex',
 				coinImageUrl: window.location.origin + '/public/assets/tokens/cmdx.png',
 			},
 		],
@@ -1466,6 +1740,425 @@ export const EmbedChainInfos: ChainInfoWithExplorer[] = [
 			high: 50,
 		},
 		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx'],
-		explorerUrlToTx: 'https://cheqd.didx.co.za/transactions/{txHash}',
+		explorerUrlToTx: 'https://explorer.cheqd.io/transactions/{txHash}',
+	},
+	{
+		rpc: 'https://rpc.stargaze-apis.com',
+		rest: 'https://rest.stargaze-apis.com',
+		chainId: 'stargaze-1',
+		chainName: 'Stargaze',
+		stakeCurrency: {
+			coinDenom: 'STARS',
+			coinMinimalDenom: 'ustars',
+			coinDecimals: 6,
+			coinGeckoId: 'pool:ustars',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/stars.png',
+		},
+		bip44: {
+			coinType: 118,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('stars'),
+		currencies: [
+			{
+				coinDenom: 'STARS',
+				coinMinimalDenom: 'ustars',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:ustars',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/stars.png',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'STARS',
+				coinMinimalDenom: 'ustars',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:ustars',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/stars.png',
+			},
+		],
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx'],
+		explorerUrlToTx: 'https://www.mintscan.io/stargaze/txs/{txHash}',
+	},
+	{
+		rpc: 'https://rpc.chihuahua.wtf',
+		rest: 'https://api.chihuahua.wtf',
+		chainId: 'chihuahua-1',
+		chainName: 'Chihuahua',
+		stakeCurrency: {
+			coinDenom: 'HUAHUA',
+			coinMinimalDenom: 'uhuahua',
+			coinDecimals: 6,
+			coinGeckoId: 'pool:uhuahua',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/huahua.png',
+		},
+		bip44: {
+			coinType: 118,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('chihuahua'),
+		currencies: [
+			{
+				coinDenom: 'HUAHUA',
+				coinMinimalDenom: 'uhuahua',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:uhuahua',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/huahua.png',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'HUAHUA',
+				coinMinimalDenom: 'uhuahua',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:uhuahua',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/huahua.png',
+			},
+		],
+		gasPriceStep: {
+			low: 0.025,
+			average: 0.03,
+			high: 0.035,
+		},
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx'],
+		explorerUrlToTx: 'https://ping.pub/chihuahua/tx/{txHash}',
+	},
+	{
+		rpc: 'https://node0.mainnet.lum.network/rpc',
+		rest: 'https://node0.mainnet.lum.network/rest',
+		chainId: 'lum-network-1',
+		chainName: 'Lum Network',
+		stakeCurrency: {
+			coinDenom: 'LUM',
+			coinMinimalDenom: 'ulum',
+			coinDecimals: 6,
+			coinGeckoId: 'pool:ulum',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/lum.svg',
+		},
+		bip44: {
+			coinType: 118,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('lum'),
+		currencies: [
+			{
+				coinDenom: 'LUM',
+				coinMinimalDenom: 'ulum',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:ulum',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/lum.svg',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'LUM',
+				coinMinimalDenom: 'ulum',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:ulum',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/lum.svg',
+			},
+		],
+		coinType: 118,
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx', 'ibc-go'],
+		explorerUrlToTx: 'https://www.mintscan.io/lum/txs/{txHash}',
+	},
+	{
+		rpc: 'https://mainnet-rpc.vidulum.app',
+		rest: 'https://mainnet-lcd.vidulum.app',
+		chainId: 'vidulum-1',
+		chainName: 'Vidulum',
+		stakeCurrency: {
+			coinDenom: 'VDL',
+			coinMinimalDenom: 'uvdl',
+			coinDecimals: 6,
+			coinGeckoId: 'vidulum',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/vdl.svg',
+		},
+		bip44: {
+			coinType: 370,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('vdl'),
+		currencies: [
+			{
+				coinDenom: 'VDL',
+				coinMinimalDenom: 'uvdl',
+				coinDecimals: 6,
+				coinGeckoId: 'vidulum',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/vdl.svg',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'VDL',
+				coinMinimalDenom: 'uvdl',
+				coinDecimals: 6,
+				coinGeckoId: 'vidulum',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/vdl.svg',
+			},
+		],
+		coinType: 370,
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx', 'ibc-go'],
+		explorerUrlToTx: 'https://explorers.vidulum.app/vidulum/tx/{txHash}',
+	},
+	{
+		rpc: 'https://rpc.mainnet.desmos.network',
+		rest: 'https://api.mainnet.desmos.network',
+		chainId: 'desmos-mainnet',
+		chainName: 'Desmos',
+		stakeCurrency: {
+			coinDenom: 'DSM',
+			coinMinimalDenom: 'udsm',
+			coinDecimals: 6,
+			coinGeckoId: 'pool:udsm',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/dsm.svg',
+		},
+		bip44: {
+			coinType: 852,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('desmos'),
+		currencies: [
+			{
+				coinDenom: 'DSM',
+				coinMinimalDenom: 'udsm',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:udsm',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/dsm.svg',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'DSM',
+				coinMinimalDenom: 'udsm',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:udsm',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/dsm.svg',
+			},
+		],
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx', 'ibc-go'],
+		explorerUrlToTx: 'https://explorer.desmos.network/transactions/{txHash}',
+	},
+	{
+		rpc: 'https://rpc-1-dig.notional.ventures',
+		rest: 'https://api-1-dig.notional.ventures',
+		chainId: 'dig-1',
+		chainName: 'Dig',
+		stakeCurrency: {
+			coinDenom: 'DIG',
+			coinMinimalDenom: 'udig',
+			coinDecimals: 6,
+			coinGeckoId: 'pool:udig',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/dig.png',
+		},
+		bip44: {
+			coinType: 118,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('dig'),
+		currencies: [
+			{
+				coinDenom: 'DIG',
+				coinMinimalDenom: 'udig',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:udig',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/dig.png',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'DIG',
+				coinMinimalDenom: 'udig',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:udig',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/dig.png',
+			},
+		],
+		gasPriceStep: {
+			low: 0.025,
+			average: 0.03,
+			high: 0.035,
+		},
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx', 'ibc-go'],
+		explorerUrlToTx: 'https://ping.pub/dig/tx/{txHash}',
+	},
+	{
+		rpc: 'https://rpc-sommelier.keplr.app',
+		rest: 'https://lcd-sommelier.keplr.app',
+		chainId: 'sommelier-3',
+		chainName: 'Sommelier',
+		stakeCurrency: {
+			coinDenom: 'SOMM',
+			coinMinimalDenom: 'usomm',
+			coinDecimals: 6,
+			coinGeckoId: 'pool:usomm',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/somm.png',
+		},
+		bip44: {
+			coinType: 118,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('somm'),
+		currencies: [
+			{
+				coinDenom: 'SOMM',
+				coinMinimalDenom: 'usomm',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:usomm',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/somm.png',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'SOMM',
+				coinMinimalDenom: 'usomm',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:usomm',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/somm.png',
+			},
+		],
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx', 'ibc-go'],
+		explorerUrlToTx: 'https://sommscan.io',
+	},
+	{
+		rpc: 'https://rpc.sifchain.finance',
+		rest: 'https://api-int.sifchain.finance',
+		chainId: 'sifchain-1',
+		chainName: 'Sifchain',
+		stakeCurrency: {
+			coinDenom: 'ROWAN',
+			coinMinimalDenom: 'rowan',
+			coinDecimals: 18,
+			coinGeckoId: 'sifchain',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/rowan.svg',
+		},
+		bip44: {
+			coinType: 118,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('sif'),
+		currencies: [
+			{
+				coinDenom: 'ROWAN',
+				coinMinimalDenom: 'rowan',
+				coinDecimals: 18,
+				coinGeckoId: 'sifchain',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/rowan.svg',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'ROWAN',
+				coinMinimalDenom: 'rowan',
+				coinDecimals: 18,
+				coinGeckoId: 'sifchain',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/rowan.svg',
+			},
+		],
+		features: ['stargate', 'ibc-transfer'],
+		explorerUrlToTx: 'https://www.mintscan.io/sifchain/txs/{txHash}',
+	},
+	{
+		rpc: 'https://rpc.laozi3.bandchain.org',
+		rest: 'https://laozi1.bandchain.org/api',
+		chainId: 'laozi-mainnet',
+		chainName: 'BandChain',
+		stakeCurrency: {
+			coinDenom: 'BAND',
+			coinMinimalDenom: 'uband',
+			coinDecimals: 6,
+			coinGeckoId: 'band-protocol',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/band.svg',
+		},
+		bip44: {
+			coinType: 494,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('band'),
+		currencies: [
+			{
+				coinDenom: 'BAND',
+				coinMinimalDenom: 'uband',
+				coinDecimals: 6,
+				coinGeckoId: 'band-protocol',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/band.svg',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'BAND',
+				coinMinimalDenom: 'uband',
+				coinDecimals: 6,
+				coinGeckoId: 'band-protocol',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/band.svg',
+			},
+		],
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx'],
+		explorerUrlToTx: 'https://cosmoscan.io/tx/{txHash}',
+	},
+	{
+		rpc: 'https://node1.konstellation.tech:26657',
+		rest: 'https://node1.konstellation.tech:1318',
+		chainId: 'darchub',
+		chainName: 'Konstellation',
+		stakeCurrency: {
+			coinDenom: 'DARC',
+			coinMinimalDenom: 'udarc',
+			coinDecimals: 6,
+			coinGeckoId: 'pool:udarc',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/darc.svg',
+		},
+		bip44: {
+			coinType: 118,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('darc'),
+		currencies: [
+			{
+				coinDenom: 'DARC',
+				coinMinimalDenom: 'udarc',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:udarc',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/darc.svg',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'DARC',
+				coinMinimalDenom: 'udarc',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:udarc',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/darc.svg',
+			},
+		],
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx'],
+		explorerUrlToTx: 'https://www.mintscan.io/konstellation/txs/{txHash}',
+	},
+	{
+		rpc: 'https://rpc.aphrodite.main.network.umee.cc',
+		rest: 'https://api.aphrodite.main.network.umee.cc',
+		chainId: 'umee-1',
+		chainName: 'Umee',
+		stakeCurrency: {
+			coinDenom: 'UMEE',
+			coinMinimalDenom: 'uumee',
+			coinDecimals: 6,
+			coinGeckoId: 'pool:uumee',
+			coinImageUrl: window.location.origin + '/public/assets/tokens/umee.png',
+		},
+		bip44: {
+			coinType: 118,
+		},
+		bech32Config: Bech32Address.defaultBech32Config('umee'),
+		currencies: [
+			{
+				coinDenom: 'UMEE',
+				coinMinimalDenom: 'uumee',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:uumee',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/umee.png',
+			},
+		],
+		feeCurrencies: [
+			{
+				coinDenom: 'UMEE',
+				coinMinimalDenom: 'uumee',
+				coinDecimals: 6,
+				coinGeckoId: 'pool:uumee',
+				coinImageUrl: window.location.origin + '/public/assets/tokens/umee.png',
+			},
+		],
+		features: ['stargate', 'ibc-transfer', 'no-legacy-stdTx'],
+		explorerUrlToTx: 'https://www.mintscan.io/umee/txs/{txHash}',
 	},
 ];

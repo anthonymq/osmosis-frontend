@@ -146,6 +146,27 @@ export class QueriedPoolBase {
 		};
 	}
 
+	estimateJoinSwapExternAmountIn(
+		tokenIn: {
+			currency: Currency;
+			amount: string;
+		},
+		shareCoinDecimals: number
+	): {
+		shareOutAmount: IntPretty;
+		shareOutAmountRaw: Int;
+	} {
+		const amount = new Dec(tokenIn.amount).mul(DecUtils.getPrecisionDec(tokenIn.currency.coinDecimals)).truncate();
+		const coin = new Coin(tokenIn.currency.coinMinimalDenom, amount);
+
+		const estimated = this.pool.estimateJoinSwapExternAmountIn(coin);
+
+		return {
+			shareOutAmount: new IntPretty(estimated.shareOutAmount).increasePrecision(shareCoinDecimals),
+			shareOutAmountRaw: estimated.shareOutAmount,
+		};
+	}
+
 	estimateExitSwap(shareInAmount: string, shareCoinDecimals: number): { tokenOuts: CoinPretty[] } {
 		const estimated = this.pool.estimateExitPool(
 			new Dec(shareInAmount).mul(DecUtils.getPrecisionDec(shareCoinDecimals)).truncate()
@@ -445,7 +466,7 @@ export class QueriedPoolBase {
 	@computed
 	get totalShare(): IntPretty {
 		// 쉐어의 decimal은 18으로 고정되어 있다
-		return new IntPretty(this.pool.totalShare).precision(18);
+		return new IntPretty(this.pool.totalShare).moveDecimalPointLeft(18);
 	}
 
 	@computed

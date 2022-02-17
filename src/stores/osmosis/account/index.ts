@@ -10,14 +10,19 @@ import {
 	AccountSetOpts,
 	CosmosAccount,
 	HasCosmosAccount,
+	HasCosmwasmAccount,
+	HasCosmwasmQueries,
+	CosmwasmAccount,
+	AccountWithCosmwasm,
+	CosmwasmMsgOpts,
 } from '@keplr-wallet/stores';
-import { Dec, DecUtils } from '@keplr-wallet/unit';
+import { Coin, Dec, DecUtils } from '@keplr-wallet/unit';
 import { Currency } from '@keplr-wallet/types';
 import { DeepReadonly } from 'utility-types';
 import { HasOsmosisQueries } from '../query';
 import deepmerge from 'deepmerge';
 import { QueriedPoolBase } from '../query/pool';
-import { cosmos, google, osmosis } from '../../../proto';
+import { osmosis } from '../../../proto';
 import Long from 'long';
 
 export interface HasOsmosisAccount {
@@ -27,6 +32,9 @@ export interface HasOsmosisAccount {
 export interface OsmosisMsgOpts {
 	readonly createPool: MsgOpt;
 	readonly joinPool: MsgOpt & {
+		shareCoinDecimals: number;
+	};
+	readonly joinSwapExternAmountIn: MsgOpt & {
 		shareCoinDecimals: number;
 	};
 	readonly exitPool: MsgOpt & {
@@ -40,49 +48,61 @@ export interface OsmosisMsgOpts {
 }
 
 export class AccountWithCosmosAndOsmosis
-	extends AccountSetBase<CosmosMsgOpts & OsmosisMsgOpts, HasCosmosQueries & HasOsmosisQueries>
-	implements HasCosmosAccount, HasOsmosisAccount {
+	extends AccountSetBase<
+		CosmosMsgOpts & OsmosisMsgOpts & CosmwasmMsgOpts,
+		HasCosmosQueries & HasOsmosisQueries & HasCosmwasmQueries
+	>
+	implements HasCosmosAccount, HasOsmosisAccount, HasCosmwasmAccount {
 	public readonly cosmos: DeepReadonly<CosmosAccount>;
 	public readonly osmosis: DeepReadonly<OsmosisAccount>;
+	public readonly cosmwasm: DeepReadonly<CosmwasmAccount>;
 
-	static readonly defaultMsgOpts: CosmosMsgOpts & OsmosisMsgOpts = deepmerge(AccountWithCosmos.defaultMsgOpts, {
-		createPool: {
-			type: 'osmosis/gamm/create-pool',
-			gas: 2000000,
-		},
-		joinPool: {
-			type: 'osmosis/gamm/join-pool',
-			gas: 1500000,
-			shareCoinDecimals: 18,
-		},
-		exitPool: {
-			type: 'osmosis/gamm/exit-pool',
-			gas: 1500000,
-			shareCoinDecimals: 18,
-		},
-		swapExactAmountIn: {
-			type: 'osmosis/gamm/swap-exact-amount-in',
-			gas: 750000,
-		},
-		swapExactAmountOut: {
-			type: 'osmosis/gamm/swap-exact-amount-out',
-			gas: 750000,
-		},
-		lockTokens: {
-			type: 'osmosis/lockup/lock-tokens',
-			gas: 400000,
-		},
-		beginUnlocking: {
-			type: 'osmosis/lockup/begin-unlock-period-lock',
-			// Gas per msg
-			gas: 140000,
-		},
-		unlockPeriodLock: {
-			type: 'osmosis/lockup/unlock-period-lock',
-			// Gas per msg
-			gas: 140000,
-		},
-	});
+	static readonly defaultMsgOpts: CosmosMsgOpts & OsmosisMsgOpts & CosmwasmMsgOpts = deepmerge(
+		AccountWithCosmos.defaultMsgOpts,
+		deepmerge(AccountWithCosmwasm.defaultMsgOpts, {
+			createPool: {
+				type: 'osmosis/gamm/create-pool',
+				gas: 250000,
+			},
+			joinPool: {
+				type: 'osmosis/gamm/join-pool',
+				gas: 140000,
+				shareCoinDecimals: 18,
+			},
+			joinSwapExternAmountIn: {
+				type: 'osmosis/gamm/join-swap-extern-amount-in',
+				gas: 140000,
+				shareCoinDecimals: 18,
+			},
+			exitPool: {
+				type: 'osmosis/gamm/exit-pool',
+				gas: 140000,
+				shareCoinDecimals: 18,
+			},
+			swapExactAmountIn: {
+				type: 'osmosis/gamm/swap-exact-amount-in',
+				gas: 250000,
+			},
+			swapExactAmountOut: {
+				type: 'osmosis/gamm/swap-exact-amount-out',
+				gas: 250000,
+			},
+			lockTokens: {
+				type: 'osmosis/lockup/lock-tokens',
+				gas: 250000,
+			},
+			beginUnlocking: {
+				type: 'osmosis/lockup/begin-unlock-period-lock',
+				// Gas per msg
+				gas: 140000,
+			},
+			unlockPeriodLock: {
+				type: 'osmosis/lockup/unlock-period-lock',
+				// Gas per msg
+				gas: 140000,
+			},
+		})
+	);
 
 	constructor(
 		protected readonly eventListener: {
@@ -91,8 +111,10 @@ export class AccountWithCosmosAndOsmosis
 		},
 		protected readonly chainGetter: ChainGetter,
 		protected readonly chainId: string,
-		protected readonly queriesStore: QueriesStore<QueriesSetBase & HasCosmosQueries & HasOsmosisQueries>,
-		protected readonly opts: AccountSetOpts<CosmosMsgOpts & OsmosisMsgOpts>
+		protected readonly queriesStore: QueriesStore<
+			QueriesSetBase & HasCosmosQueries & HasOsmosisQueries & HasCosmwasmQueries
+		>,
+		protected readonly opts: AccountSetOpts<CosmosMsgOpts & OsmosisMsgOpts & CosmwasmMsgOpts>
 	) {
 		super(eventListener, chainGetter, chainId, queriesStore, opts);
 
@@ -104,6 +126,12 @@ export class AccountWithCosmosAndOsmosis
 		);
 		this.osmosis = new OsmosisAccount(
 			this as AccountSetBase<OsmosisMsgOpts, HasOsmosisQueries>,
+			chainGetter,
+			chainId,
+			queriesStore
+		);
+		this.cosmwasm = new CosmwasmAccount(
+			this as AccountSetBase<CosmwasmMsgOpts, HasCosmwasmQueries>,
 			chainGetter,
 			chainId,
 			queriesStore
@@ -291,6 +319,92 @@ export class OsmosisAccount {
 								poolId: Long.fromString(msg.value.poolId),
 								shareOutAmount: msg.value.shareOutAmount,
 								tokenInMaxs: msg.value.tokenInMaxs,
+							}).finish(),
+						},
+					],
+				};
+			},
+			memo,
+			{
+				amount: [],
+				gas: this.base.msgOpts.joinPool.gas.toString(),
+			},
+			undefined,
+			tx => {
+				if (tx.code == null || tx.code === 0) {
+					// TODO: Refresh the pools list.
+
+					// Refresh the balances
+					const queries = this.queriesStore.get(this.chainId);
+					queries.queryBalances.getQueryBech32Address(this.base.bech32Address).balances.forEach(bal => {
+						// TODO: Explicitly refresh the share expected to be minted and provided to the pool.
+						bal.fetch();
+					});
+
+					queries.osmosis.queryGammPools.getObservableQueryPool(poolId).fetch();
+				}
+
+				if (onFulfill) {
+					onFulfill(tx);
+				}
+			}
+		);
+	}
+
+	async sendJoinSwapExternAmountInMsg(
+		poolId: string,
+		tokenIn: { currency: Currency; amount: string },
+		maxSlippage: string = '0',
+		memo: string = '',
+		onFulfill?: (tx: any) => void
+	) {
+		const queries = this.queries;
+
+		await this.base.sendMsgs(
+			'joinPool',
+			async () => {
+				const queryPool = queries.osmosis.queryGammPools.getObservableQueryPool(poolId);
+				await queryPool.waitFreshResponse();
+
+				const pool = queryPool.pool;
+				if (!pool) {
+					throw new Error('Unknown pool');
+				}
+
+				const estimated = pool.estimateJoinSwapExternAmountIn(tokenIn, this.base.msgOpts.joinPool.shareCoinDecimals);
+
+				const amount = new Dec(tokenIn.amount).mul(DecUtils.getPrecisionDec(tokenIn.currency.coinDecimals)).truncate();
+				const coin = new Coin(tokenIn.currency.coinMinimalDenom, amount);
+
+				const outRatio = new Dec(1).sub(new Dec(maxSlippage).quo(new Dec(100)));
+				const shareOutMinAmount = estimated.shareOutAmountRaw
+					.toDec()
+					.mul(outRatio)
+					.truncate();
+
+				const msg = {
+					type: this.base.msgOpts.joinSwapExternAmountIn.type,
+					value: {
+						sender: this.base.bech32Address,
+						poolId,
+						tokenIn: {
+							denom: coin.denom,
+							amount: coin.amount.toString(),
+						},
+						shareOutMinAmount: shareOutMinAmount.toString(),
+					},
+				};
+
+				return {
+					aminoMsgs: [msg],
+					protoMsgs: [
+						{
+							type_url: '/osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn',
+							value: osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn.encode({
+								sender: msg.value.sender,
+								poolId: Long.fromString(msg.value.poolId),
+								tokenIn: msg.value.tokenIn,
+								shareOutMinAmount: msg.value.shareOutMinAmount,
 							}).finish(),
 						},
 					],
@@ -696,9 +810,7 @@ export class OsmosisAccount {
 			value: {
 				owner: this.base.bech32Address,
 				// Duration should be encodec as nana sec.
-				// XXX: Due to the bug on the lockup module that the gas would be increased if the locks with same lock duration accumulated.
-				//      To reduce this problem, add very small extra lock duration as jitter.
-				duration: (duration * 1_000_000_000 + Math.floor(Math.random() * 10000)).toString(),
+				duration: (duration * 1_000_000_000).toString(),
 				coins: primitiveTokens,
 			},
 		};
